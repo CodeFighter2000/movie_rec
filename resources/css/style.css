@@ -1,0 +1,197 @@
+* {
+    color: #AAAAAA;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    overflow: auto;
+}
+
+header {
+    background-color: #1C1C1C;
+}
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 6vw;
+    height: 7vh;
+}
+
+.logo {
+    display: inline-flex;
+
+}
+
+/* BURGER MENU START */
+
+.menu-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3rem;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+}
+
+.menu-bar {
+    width: 40px;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+
+}
+
+.menu-bar::before,
+.menu-bar::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;    
+}
+
+.menu-bar::before {
+    transform: translateY(-12px);
+}
+
+.menu-bar::after {
+    transform: translateY(12px);
+}
+
+.menu-btn.hover .menu-bar {
+    background-color: blueviolet;
+}
+
+.menu-btn.hover .menu-bar::before {
+    background-color: blueviolet;
+}
+.menu-btn.hover .menu-bar::after {
+    background-color: blueviolet;
+}
+
+/* BURGER MENU END */
+
+/* POP UP MENU START */
+.menu-pop {
+    background-color: red;
+    display: none;         /* <----- Remove this */
+    position:absolute;
+    top: 6%;
+    margin-top: 10px;
+    font-size: 2rem;
+    /* padding: 10px 0;
+    border-radius: 6px; */
+}
+
+.menu-pop li {
+    margin: 1rem 0;
+    background-color: blue;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.menu-pop::before {
+    content: "";
+    height: 10px;
+    top: -10px;
+    width: 100%;
+    position: absolute;
+    background-color: red;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+
+}
+.menu-pop::after {
+    content: "";
+    height: 10px;
+    bottom: -10px;
+    width: 100%;
+    position: absolute;
+    background-color: red;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+}
+/* POP UP MENU END */
+
+/* MOVIES BEGIN */
+
+main {
+    background-color: #0e0e0e;
+    display: flex;
+    justify-content: center; 
+}
+
+section {
+    background-color: #242424;
+    height: 100vh;
+    width: 80%;
+    
+}
+
+.movieList {
+    /* background-color: #AAAAAA; */
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(185px,1fr));
+
+}
+.movieList li {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    transition: all 500ms;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.movieList li:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+}
+
+figure {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ 
+}
+
+.moviePageLink {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.poster {
+    
+    
+}
+
+.title {
+    text-align: center;
+    text-overflow: ellipsis;
+    max-height: 2.2rem;
+    width: 100%;
+    margin-top: 0.2rem;
+
+}
+
+/* MOVIES END */
