@@ -4,10 +4,6 @@
     text-decoration: none;
 }
 
-html {
-    overflow: auto;
-}
-
 header {
     background-color: #1C1C1C;
 }
@@ -19,10 +15,56 @@ header {
     height: 7vh;
 }
 
-.logo {
-    display: inline-flex;
+h4 {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+footer {
+    background-color: #1C1C1C;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 15vh;
+    width: 100%;
+}
+
+.logoAndCopy {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 
 }
+
+.copy {
+    height: 80px;
+}
+
+.helpLinks ul {
+    margin-top: 0.4rem;
+}
+
+.logo {
+    background-image: url("../img/Logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    height: 100%;
+}
+
+.homeIcon img {
+    width: auto;
+    height: 50px;
+    filter: invert();
+}
+
+.homeIcon {
+    margin-left: auto;
+}
+
+
 
 /* BURGER MENU START */
 
@@ -79,8 +121,8 @@ header {
 
 /* POP UP MENU START */
 .menu-pop {
-    background-color: red;
-    display: none;         /* <----- Remove this */
+    background-color: #444;
+    display: none;
     position:absolute;
     top: 6%;
     margin-top: 10px;
@@ -91,9 +133,10 @@ header {
 
 .menu-pop li {
     margin: 1rem 0;
-    background-color: blue;
     text-align: center;
     padding: 0 15px;
+    cursor: pointer;
+    
 }
 
 .menu-pop::before {
@@ -102,9 +145,9 @@ header {
     top: -10px;
     width: 100%;
     position: absolute;
-    background-color: red;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    background-color: #444;
 
 }
 .menu-pop::after {
@@ -113,10 +156,44 @@ header {
     bottom: -10px;
     width: 100%;
     position: absolute;
-    background-color: red;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+    background-color: #444;
 
+}
+
+
+.menu-pop li:hover {
+    background-color: #242424;
+}
+
+.menu-pop-extra {
+    display: none;
+    position: absolute;
+    top: -10px;
+    right: -208px;
+    border-radius: 6px;
+    background-color: #444;
+    font-size: 1.8rem;
+}
+
+.menu-btn:hover ~ .menu-pop {
+    display: block;
+}
+.menu-pop:hover {
+    display: block;
+}
+
+.menu-tree:hover ~  .menu-pop-extra {
+    display: block;
+}
+
+.menu-pop-extra:hover {
+    display: block;
+}
+
+.hidden {
+    display: none;
 }
 /* POP UP MENU END */
 
@@ -130,9 +207,7 @@ main {
 
 section {
     background-color: #242424;
-    height: 100vh;
     width: 80%;
-    
 }
 
 .movieList {
@@ -140,6 +215,7 @@ section {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(185px,1fr));
+    padding: 15px 0;
 
 }
 .movieList li {
@@ -149,9 +225,7 @@ section {
     justify-content: center;
     align-items: center;
     font-size: 1.1rem;
-    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-    height: 100%;
-    width: 100%;
+    /* box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem; */
     border-radius: 4px;
     transition: all 500ms;
     overflow: hidden;
@@ -180,11 +254,6 @@ figure {
     
 }
 
-.poster {
-    
-    
-}
-
 .title {
     text-align: center;
     text-overflow: ellipsis;
@@ -195,3 +264,99 @@ figure {
 }
 
 /* MOVIES END */
+/* MOVIEPAGE START */
+.movieDetails {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 5% 3% 
+}
+
+.posterDetails {
+    grid-row: span 2 / auto;
+    height: 540px;
+    width: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+
+}
+
+.movieDetails h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+   
+}
+
+.movieDetails h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+   
+}
+
+.movieDetails p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    text-indent: 1.5rem;
+}
+
+/* MOVIEPAGE END */
+
+/* INDEX START */
+.big {
+    height: 100px;
+    width: 400px;
+}
+.search-main {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.search-section {
+    display: inherit;
+    width: 100%;
+}
+
+.search-section form {
+    display: inherit;
+    /* border: solid; */
+    flex-direction: column;
+    height: 20vh;
+    width: 100%;
+}
+
+.search-section input {
+    width: 28vw;
+    min-width: 300px;
+    height: 4.5vh;
+    min-height: 40px;
+    align-self: center;
+    background-color: #444;
+    border: none;
+    border-radius: 30px;
+    padding-left: 14px;
+    font-size: 0.9rem;
+}
+
+.search-section button {
+    width: 6.5vw;
+    min-width: 88px;
+    height: 4vh;
+    min-height: 35px;
+    align-self: center;
+    margin-top: 4vh;
+    border-radius: 8px;
+    background-color: #5a2e98;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+
+}
+/* INDEX END */
