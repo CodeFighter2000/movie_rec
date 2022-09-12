@@ -21,7 +21,7 @@ const populateListOfGenre = list => {
         optionList.appendChild(listItem);
         //Set the event listeners to open the movies page and pass genre id
         listItem.addEventListener("click", () => {
-            location.assign(`../../resources/html/movies.html?movieQuery=${genre.id}`);
+            location.assign(`/resources/html/movies.html?movieQuery=${genre.id}`);
         });
     });
 };
